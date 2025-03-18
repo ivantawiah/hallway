@@ -1,0 +1,813 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Welcome to Hallway</title>
+  <meta name="description" content="Value changes everything">
+  <meta name="keywords" content="Hallway">
+
+  <!-- Favicons -->
+  <link href=" {% static 'assets/img/favicon.png' %}" rel="icon">
+  <link href="{% static 'assets/img/1.png' %}" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="{% static 'assets/css/main.css' %}" rel="stylesheet">
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="/" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+        <h1 class="sitename" style="font-family: 'Poppins', sans-serif;">Hallway</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="/" class="active">Home</a></li>
+          <li><a href="">About</a></li>
+          <li><a href="blog">Blog</a></li>
+          <li><a href="">Help Center</a></li>
+          <li><a href="">Team</a></li>
+          <li><a href="">Terms of Service</a></li>
+          <li class="dropdown"><a href=""><span>Policies</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="">Refund Policy</a></li>
+              <!--<li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="#">Deep Dropdown 1</a></li>
+                  <li><a href="#">Deep Dropdown 2</a></li>
+                  <li><a href="#">Deep Dropdown 3</a></li>
+                  <li><a href="#">Deep Dropdown 4</a></li>
+                  <li><a href="#">Deep Dropdown 5</a></li>
+                </ul>
+              </li>-->
+              <li><a href="">Privacy Policy</a></li>
+            </ul>
+          </li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section dark-background">
+      <img src="{% static 'assets/img/hero-bg-2.jpg' %}" alt="" class="hero-bg">
+
+      <div class="container">
+        <div class="row gy-4 justify-content-between">
+          <div class="col-lg-4 order-lg-last hero-img" data-aos="zoom-out" data-aos-delay="100">
+            <img src="{% static 'assets/img/Frame 2.png' %}" class="img-fluid animated" alt="">
+          </div>
+
+          <div class="col-lg-6  d-flex flex-column justify-content-center" data-aos="fade-in">
+            <h1>Value Changes Everything, <span>Hallway</span></h1>
+            <p>Helping you and small businesses with an innovative platform for your products and services.</p>
+            <div class="d-flex">
+              <a href="" class="btn-get-started">Get Started</a>
+              <!--<a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>-->
+              <a href="https://www.play.google.com" target="_blank"><img class="herodownload" style="margin-left: 30px; width: 170px; height: auto;" src="{% static 'assets/img/Frame 12.png' %}" alt=""></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <svg class="hero-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28 " preserveAspectRatio="none">
+        <defs>
+          <path id="wave-path" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+        </defs>
+        <g class="wave1">
+          <use xlink:href="#wave-path" x="50" y="3"></use>
+        </g>
+        <g class="wave2">
+          <use xlink:href="#wave-path" x="50" y="0"></use>
+        </g>
+        <g class="wave3">
+          <use xlink:href="#wave-path" x="50" y="9"></use>
+        </g>
+      </svg>
+
+    </section><!-- /Hero Section -->
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row align-items-xl-center gy-5">
+
+          <div class="col-xl-5 content">
+            <h3>About Us</h3>
+            <h2>Why value changes everything</h2>
+            <p>At Hallway, is a community that bridges the gap between talented individuals, small businesses, and consumers. By creating a marketplace where quality meets affordability and value, we empower vendors to grow and customers to find value effortlessly.</p>
+            <a href="" class="read-more"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+          </div>
+
+          <div class="col-xl-7">
+            <div class="row gy-4 icon-boxes">
+
+              <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="icon-box">
+                  <i class="bi bi-cloud-haze2"></i>
+                  <h3>Affordable & Fast Deliveries</h3>
+                  <p>Experience top-notch services with prices that fit your budget and delivery speeds that exceed your expectations.</p>
+                </div>
+              </div> <!-- End Icon Box -->
+
+              <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
+                <div class="icon-box">
+                  <i class="bi bi-currency-exchange"></i>
+                  <h3>Empowering Students</h3>
+                  <p>Providing opportunities for students and talented proffesionals to earn while pursuing their education.</p>
+                </div>
+              </div> <!-- End Icon Box -->
+
+              <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
+                <div class="icon-box">
+                  <i class="bi bi-graph-up-arrow"></i>
+                  <h3>Business Growth</h3>
+                  <p>Tools and exposure to help your business expand and reach new customers.</p>
+                </div>
+              </div> <!-- End Icon Box -->
+
+              <div class="col-md-6" data-aos="fade-up" data-aos-delay="500">
+                <div class="icon-box">
+                  <i class="bi bi-award"></i>
+                  <h3>Reliable Platform</h3>
+                  <p>Seamlessly connecting shoppers with vendors and talented proffesionals in a trusted ecosystem.</p>
+                </div>
+              </div> <!-- End Icon Box -->
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </section><!-- /About Section -->
+
+    <!-- Features Section -->
+    <section id="features" class="features section">
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="features-item">
+              <i class="bi bi-people-fill" style="color: #ffbb2c;"></i>
+              <h3><a href="" class="stretched-link">Connect with Startups</a></h3>
+            </div>
+          </div><!-- End Feature Item -->
+
+          <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="features-item">
+              <i class="bi bi-currency-exchange" style="color: #5578ff;"></i>
+              <h3><a href="" class="stretched-link">Affordable Services</a></h3>
+            </div>
+          </div><!-- End Feature Item -->
+
+          <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="features-item">
+              <i class="bi bi-book-half" style="color: #e80368;"></i>
+              <h3><a href="" class="stretched-link">Earn while Studying</a></h3>
+            </div>
+          </div><!-- End Feature Item -->
+
+          <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="400">
+            <div class="features-item">
+              <i class="bi bi-lightbulb" style="color: #e361ff;"></i>
+              <h3><a href="" class="stretched-link">Showcase Your Talent</a></h3>
+            </div>
+          </div><!-- End Feature Item -->
+
+          <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="500">
+            <div class="features-item">
+              <i class="bi bi-diagram-3" style="color: #47aeff;"></i>
+              <h3><a href="" class="stretched-link">Networking Opportunities</a></h3>
+            </div>
+          </div><!-- End Feature Item -->
+
+          <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="600">
+            <div class="features-item">
+              <i class="bi bi-tools" style="color: #ffa76e;"></i>
+              <h3><a href="" class="stretched-link">Expert Support</a></h3>
+            </div>
+          </div><!-- End Feature Item -->
+
+          <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="700">
+            <div class="features-item">
+              <i class="bi bi-graph-up" style="color: #11dbcf;"></i>
+              <h3><a href="" class="stretched-link">Growth Insights</a></h3>
+            </div>
+          </div><!-- End Feature Item -->
+
+          <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="800">
+            <div class="features-item">
+              <i class="bi bi-shield-check" style="color: #4233ff;"></i>
+              <h3><a href="" class="stretched-link">Secured Monetary System</a></h3>
+            </div>
+          </div><!-- End Feature Item -->
+
+          <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="900">
+            <div class="features-item">
+              <i class="bi bi-lightning-charge" style="color: #b2904f;"></i>
+              <h3><a href="" class="stretched-link">Blazing Speed</a></h3>
+            </div>
+          </div><!-- End Feature Item -->
+
+          <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="1000">
+            <div class="features-item">
+              <i class="bi bi-robot" style="color: #b20969;"></i>
+              <h3><a href="" class="stretched-link">AI- Powered Tools</a></h3>
+            </div>
+          </div><!-- End Feature Item -->
+
+          <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="1100">
+            <div class="features-item">
+              <i class="bi bi-arrow-repeat" style="color: #ff5828;"></i>
+              <h3><a href="" class="stretched-link">Easy Returns & Refunds</a></h3>
+            </div>
+          </div><!-- End Feature Item -->
+
+          <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="1200">
+            <div class="features-item">
+              <i class="bi bi-clock-history" style="color: #29cc61;"></i>
+              <h3><a href="" class="stretched-link">24/7 Availability</a></h3>
+            </div>
+          </div><!-- End Feature Item -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Features Section -->
+
+    <!-- Stats Section -->
+    <section id="stats" class="stats section light-background">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+            <i class="bi bi-person-check"></i>
+            <div class="stats-item">
+              <span data-purecounter-start="0" data-purecounter-end="22032" data-purecounter-duration="1" class="purecounter"></span>
+              <p>Active Users</p>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+            <i class="bi bi-shop"></i>
+            <div class="stats-item">
+              <span data-purecounter-start="0" data-purecounter-end="5821" data-purecounter-duration="1" class="purecounter"></span>
+              <p>Active Vendors</p>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+            <i class="bi bi-star"></i>
+            <div class="stats-item">
+              <span data-purecounter-start="0" data-purecounter-end="1463" data-purecounter-duration="1" class="purecounter"></span>
+              <p>Positive Reviews</p>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+            <i class="bi bi-mortarboard"></i>
+            <div class="stats-item">
+              <span data-purecounter-start="0" data-purecounter-end="11" data-purecounter-duration="1" class="purecounter"></span>
+              <p>Partner Universities</p>
+            </div>
+          </div><!-- End Stats Item -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Stats Section -->
+
+    <!-- Details Section -->
+    <section id="details" class="details section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Solutions</h2>
+        <div><span>What Hallway</span> <span class="description-title">Solves</span></div>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-4 align-items-center features-item">
+          <div class="col-md-5 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="100">
+            <img src="{% static 'assets/img/download (1).jpg' %}" class="img-fluid" alt="">
+          </div>
+          <div class="col-md-7" data-aos="fade-up" data-aos-delay="100">
+            <h3>For Businesses</h3>
+            <p class="fst-italic">
+              Say goodbye to the stress of managing logistics! With Hallway, processing and delivering your products to customers becomes seamless and hassle-free. Vendors can focus on what they do best— creating quality products—while Hallway takes care of the rest, ensuring a convenient, reliable, and efficient system without you lifting a toe.
+            </p>
+            
+          </div>
+        </div><!-- Features Item -->
+
+        <div class="row gy-4 align-items-center features-item">
+          <div class="col-md-5 order-1 order-md-2 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
+            <img src="{% static 'assets/img/file (3).png' %}" class="img-fluid" alt="">
+          </div>
+          <div class="col-md-7 order-2 order-md-1" data-aos="fade-up" data-aos-delay="200">
+            <h3>For Consumers</h3>
+            <p class="fst-italic">
+              They get to discover a vibrant marketplace where every interaction leads to value. Hallway connects you with high-quality products and services, simplifying your shopping experience with trust and transparency.
+            </p>
+            <p>
+              
+            </p>
+          </div>
+        </div><!-- Features Item -->
+
+        <div class="row gy-4 align-items-center features-item">
+          <div class="col-md-5 d-flex align-items-center" data-aos="zoom-out">
+            <img src="{% static 'assets/img/file.png' %}" class="img-fluid" alt="">
+          </div>
+          <div class="col-md-7" data-aos="fade-up">
+            <h3>For Students</h3>
+            
+            <p>Students are the heart of Hallway’s foundation because we believe in starting where the potential is immense. Hallway offers them an exclusive opportunity to earn money while schooling by monetizing their unique skills and talents. However, our vision doesn't stop there. As Hallway grows, this feature will expand to include everyone, allowing anyone to seamlessly monetize their talents and join our thriving community.</p>
+            
+          </div>
+        </div><!-- Features Item -->
+
+      </div>
+
+    </section><!-- /Details Section -->
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Testimonials</h2>
+        <div><span>What our Clients</span> <span class="description-title">Recommend us for</span></div>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row g-0">
+
+          
+
+        </div>
+
+      </div>
+
+    </section><!-- /Gallery Section -->
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials section dark-background">
+
+      <img src="{% static 'assets/img/Top 10 Most Beautiful Towns In Ghana - Dream Africa.jpg' %}" class="testimonials-bg" alt="">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="swiper init-swiper">
+          <script type="application/json" class="swiper-config">
+            {
+              "loop": true,
+              "speed": 600,
+              "autoplay": {
+                "delay": 5000
+              },
+              "slidesPerView": "auto",
+              "pagination": {
+                "el": ".swiper-pagination",
+                "type": "bullets",
+                "clickable": true
+              }
+            }
+          </script>
+          <div class="swiper-wrapper">
+            {% for i in testimon %}
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="{% static 'assets/img/testimonials/pic.jpg' %}" class="testimonial-img" alt="">
+                <h3>{{i.name}}</h3>
+                <h4>{{i.occupation}}</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>{{i.message}}</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+            {% endfor %}
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+
+    </section><!-- /Testimonials Section -->
+
+    <!-- Team Section -->
+    <section id="team" class="team section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Team</h2>
+        <div><span>Our Magical</span> <span class="description-title">Team</span></div>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-5">
+          {% for j in teams %}
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="member">
+              <div class="pic"><img style="border-radius: 3px;" src="{{j.pic.url}}" class="img-fluid" alt="" ></div>
+              <div class="member-info">
+                <h4>{{j.name}}</h4>
+                <span>{{j.role}}</span>
+                <div class="social">
+                  <a href="{{j.twitter}}" target="_blank"><i class="bi bi-twitter-x"></i></a>
+                  <a href="{{j.instagram}}" target="_blank"><i class="bi bi-instagram"></i></a>
+                  <a href="{{j.linkedin}}" target="_blank"><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          {% endfor %}<!-- End Team Member -->
+
+
+          <!--<div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="member">
+              <div class="pic"><img src="{% static 'assets/img/team/sii.png' %}" class="img-fluid" alt=""></div>
+              <div class="member-info">
+                <h4>Ivan Siisi Tawiah</h4>
+                <span>Co-Founder / CTO</span>
+                <div class="social">
+                  <a href="https://www.x.com/siisi_tv/"><i class="bi bi-twitter-x"></i></a>
+                  <a href="https://www.instagram.com/siisi_tv/"><i class="bi bi-instagram"></i></a>
+                  <a href="https://www.linkedin.com/in/ivan-siisi-tawiah/"><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+          </div> -->
+
+          <!--<div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="member">
+              <div class="pic"><img src="{% static 'assets/img/team/sly.png' %}" class="img-fluid" alt=""></div>
+              <div class="member-info">
+                <h4>Adu-Poku Sylvester</h4>
+                <span>Operations Manager</span>
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter-x"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>End Team Member -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Team Section -->
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Join us</h2>
+        <div><span>Perks For Joining</span> <span class="description-title">Hallway</span></div>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="100">
+            <div class="pricing-item">
+              <h3>As a Business</h3>
+              <p class="description">Joining Hallway as a vendor connects you to a thriving marketplace, giving your business the tools it needs to succeed. Here's why you should sign up</p>
+              <!--<h4><sup>$</sup>0<span> / month</span></h4>-->
+              <a href="register" class="cta-btn">Get Started</a>
+              
+              <ul>
+                <li><i class="bi bi-check"></i> <span>Increased Visibility</span></li>
+                <li><i class="bi bi-check"></i> <span>Insights Dashboard</span></li>
+                <li><i class="bi bi-check"></i> <span>Seamless Transactions</span></li>
+                <li><i class="bi bi-check"></i> <span>Swift Delivery of Products</span></li>
+                <li><i class="bi bi-check"></i> <span>Dedicated Support</span></li>
+                <li><i class="bi bi-check"></i> <span>Affordable Promotions</span></li>
+              </ul>
+            </div>
+          </div><!-- End Pricing Item -->
+
+          <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="100">
+            <div class="pricing-item">
+              <h3>As a Professional</h3>
+              <p class="description">Whether you're freelancing or offering professional services, Hallway provides the perfect platform to showcase your talents and connect with clients. Benefits include</p>
+              <!--<h4><sup>$</sup>0<span> / month</span></h4>-->
+              <a href="#" class="cta-btn">Get Started</a>
+              
+              <ul>
+                <li><i class="bi bi-check"></i> <span>Price your talent and Skills</span></li>
+                <li><i class="bi bi-check"></i> <span>Personalized Profiles</span></li>
+                <li><i class="bi bi-check"></i> <span>Flexible Work Options</span></li>
+                <li><i class="bi bi-check"></i> <span>Earnings Potential</span></li>
+                <li><i class="bi bi-check"></i> <span>Professional Growth</span></li>
+                <li><i class="bi bi-check"></i> <span>Affordable Promotions</span></li>
+              </ul>
+            </div>
+          </div><!-- End Pricing Item -->
+
+          <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="100">
+            <div class="pricing-item">
+              <h3>As a User/Consumer</h3>
+              <p class="description">Hallway makes it easy to find top-notch services and quality products while enjoying seamless shopping and secure transactions. Here's why you'll love it</p>
+              <!--<h4><sup>$</sup>0<span> / month</span></h4>-->
+              <a href="#" class="cta-btn">Get Started</a>
+              
+              <ul>
+                <li><i class="bi bi-check"></i> <span>Access to Quality Services</span></li>
+                <li><i class="bi bi-check"></i> <span>Find Valuable and Promising Products</span></li>
+                <li><i class="bi bi-check"></i> <span>Enjoy fast Delivery</span></li>
+                <li><i class="bi bi-check"></i> <span>AI Assistance to help you find what you want</span></li>
+                <li><i class="bi bi-check"></i> <span>24/7 Customer Support</span></li>
+                <li><i class="bi bi-check"></i> <span>Affordable Promotions</span></li>
+              </ul>
+            </div>
+          </div><!-- End Pricing Item -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Pricing Section -->
+
+    <!-- Faq Section -->
+    <section id="faq" class="faq section light-background">
+
+      <div class="container-fluid">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-7 d-flex flex-column justify-content-center order-2 order-lg-1">
+
+            <div class="content px-xl-5" data-aos="fade-up" data-aos-delay="100">
+              <h3><span>Frequently Asked </span><strong>Questions</strong></h3>
+              <p>
+                These are the questions we get asked the most! Whether you’re curious about how Hallway works, setting up your account, or making the most of our platform as a vendor, professional, or consumer, we’ve got the answers you need right here.
+              </p>
+            </div>
+
+            <div class="faq-container px-xl-5" data-aos="fade-up" data-aos-delay="200">
+
+              <div class="faq-item faq-active">
+                <i class="faq-icon bi bi-question-circle"></i>
+                <h3>What is Hallway?</h3>
+                <div class="faq-content">
+                  <p>Hallway is a community-driven platform connecting vendors, professionals, and consumers, designed to promote small startups and service providers while offering value to customers.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+              <div class="faq-item">
+                <i class="faq-icon bi bi-question-circle"></i>
+                <h3>Is Hallway available worldwide?</h3>
+                <div class="faq-content">
+                  <p>
+                    Currently, Hallway operates only in some Universities across Ghana. We plan to expand to more areas globally soon!</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+              <div class="faq-item">
+                <i class="faq-icon bi bi-question-circle"></i>
+                <h3>How do I get paid?</h3>
+                <div class="faq-content">
+                  <p>
+                    Payments are securely processed and transferred to your linked bank account or mobile wallet. Payout schedules vary depending on the payment method.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+              <div class="faq-item">
+                <i class="faq-icon bi bi-question-circle"></i>
+                <h3>Are the vendors and professionals verified?</h3>
+                <div class="faq-content">
+                  <p>Yes, we verify all vendors and professionals to ensure quality and reliability on the platform.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+            </div>
+
+          </div>
+
+          <div class="col-lg-5 order-1 order-lg-2">
+            <img src="{% static 'assets/img/faq.jpg' %}" class="img-fluid" alt="" data-aos="zoom-in" data-aos-delay="100">
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /Faq Section -->
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Contact</h2>
+        <div><span>You can</span> <span class="description-title">Contact us</span></div>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade" data-aos-delay="100">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-4">
+            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
+              <i class="bi bi-geo-alt flex-shrink-0"></i>
+              <div>
+                <h3>Address</h3>
+                <p>KNUST, Kumasi, Ashanti Region - Ghana</p>
+              </div>
+            </div><!-- End Info Item -->
+
+            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
+              <i class="bi bi-telephone flex-shrink-0"></i>
+              <div>
+                <h3>Call Us</h3>
+                <p>+233 54 939 5717</p>
+              </div>
+            </div><!-- End Info Item -->
+
+            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
+              <i class="bi bi-envelope flex-shrink-0"></i>
+              <div>
+                <h3>Email Us</h3>
+                <p>info@hallway-gh.tech</p>
+              </div>
+            </div><!-- End Info Item -->
+
+          </div>
+
+          <div class="col-lg-8">
+            <form action="{% static 'forms/contact.php' %}" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+              <div class="row gy-4">
+
+                <div class="col-md-6">
+                  <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
+                </div>
+
+                <div class="col-md-6 ">
+                  <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
+                </div>
+
+                <div class="col-md-12">
+                  <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
+                </div>
+
+                <div class="col-md-12">
+                  <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
+                </div>
+
+                <div class="col-md-12 text-center">
+                  <div class="loading">Loading</div>
+                  <div class="error-message"></div>
+                  <div class="sent-message">Your message has been sent. Thank you!</div>
+
+                  <button type="submit">Send Message</button>
+                </div>
+
+              </div>
+            </form>
+          </div><!-- End Contact Form -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Contact Section -->
+
+  </main>
+
+  <footer id="footer" class="footer dark-background">
+
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-4 col-md-6 footer-about">
+          <a href="" class="logo d-flex align-items-center">
+            <!--<span class="sitename">Bootslander</span>-->
+            <img src="{% static 'assets/img/Frame 1.png' %}" alt="">
+          </a>
+          <div class="footer-contact pt-3">
+            <p>Kwame Nkrumah University of Science & Tech.</p>
+            <p>Kumai, Ashanti Region - Ghana</p>
+            <p class="mt-3"><strong>Phone:</strong> <span>+233 54 939 5717</span></p>
+            <p><strong>Email:</strong> <span>info@hallway-gh.tech</span></p>
+          </div>
+          <div class="social-links d-flex mt-4">
+            <a href=""><i class="bi bi-twitter-x"></i></a>
+            <a href=""><i class="bi bi-facebook"></i></a>
+            <a href=""><i class="bi bi-instagram"></i></a>
+            <a href=""><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Blog</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="#">Terms of service</a></li>
+            <li><a href="#">Privacy policy</a></li>
+            <li><a href="#">Refund Policy</a></li>
+            <li><a href="#">Help Center</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4 col-md-12 footer-newsletter">
+          <h4>Our Newsletter</h4>
+          <p>Subscribe to our newsletter and receive the latest news about our products and services!</p>
+          <form action="{% static 'forms/newsletter.php' %}" method="post" class="php-email-form">
+            <div class="newsletter-form"><input type="email" name="email"><input type="submit" value="Subscribe"></div>
+            <div class="loading">Loading</div>
+            <div class="error-message"></div>
+            <div class="sent-message">Your subscription request has been sent. Thank you!</div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">Hallway LLC</strong> <span>All Rights Reserved</span></p>
+      <div class="credits">
+        Powered by <a href="https://www.siisi.tech">Siisi Technologies</a>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
+  <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/purecounter/purecounter_vanilla.js' %}"></script>
+  <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+
+  <!-- Main JS File -->
+  <script src="{% static 'assets/js/main.js' %}"></script>
+
+</body>
+
+</html>

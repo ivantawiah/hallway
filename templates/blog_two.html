@@ -1,0 +1,428 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Hallway Blog</title>
+  <meta name="description" content="Value changes everything">
+  <meta name="keywords" content="Hallway">
+
+  <!-- Favicons -->
+  <link href=" {% static 'assets/img/favicon.png' %}" rel="icon">
+  <link href="{% static 'assets/img/1.png' %}" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="{% static 'assets/css/blog_two.css' %}" rel="stylesheet">
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+      <a href="/" class="logo d-flex align-items-center">
+        <h1 class="sitename" style="font-family: 'Poppins', sans-serif; color: #FFCE21;">Hallway</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu" style="background-color: #604007; border-radius: 8px; padding-right: 10px;">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="">About</a></li>
+          <li><a href="" class="active">Blog</a></li>
+          <li><a href="">Help Center</a></li>
+          <li><a href="">Team</a></li>
+          <li><a href="">Terms of Service</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+    <!-- Hero Section -->
+    <section id="heros" class="hero section dark-background">
+        <div class="hero-slider">
+            {% for m in bogs %}            
+            <div class="slide{% if forloop.first %} active{% endif %}">
+                <div class="title-overlay" style="z-index: 3; position: absolute; top: 50%; left: 50%; justify-content: center;">
+                    <a href="article"><h2 style="transform: translate(-50%, -50%); color: white; background: rgba(0, 0, 0, 0.6); padding: 15px 25px; border-radius: 8px; font-size: 2rem; font-weight: 700; text-align: center;">{{m.article_title}}</h2></a>
+    
+                </div>
+                <img src="{{m.header_img.url}}" alt="" class="hero-bg">
+            </div>
+            {% endfor %}    
+        </div>
+        <style>
+            .slide {
+                display: none;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                transition: opacity 0.5s ease-in-out;
+            }
+            
+
+            .slide.active {
+                display: flex;
+            }
+        </style>
+        <script>
+                document.addEventListener('DOMContentLoaded', () => {
+                const slides = document.querySelectorAll('.slide');
+                let currentSlide = 0;
+
+                function showSlide(index) {
+                    slides.forEach((slide, i) => {
+                        slide.classList.toggle('active', i === index);
+                    });
+                }
+
+                function nextSlide() {
+                    currentSlide = (currentSlide + 1) % slides.length;
+                    showSlide(currentSlide);
+                }
+
+                setInterval(nextSlide, 5000); // Change slide every 5 seconds
+            });
+
+        </script>
+
+  
+        <div class="container">
+          <div class="row gy-4 justify-content-between">
+           <!--<div class="col-lg-4 order-lg-last hero-img" data-aos="zoom-out" data-aos-delay="100">
+              <img src="{% static 'assets/img/Frame 2.png' %}" class="img-fluid animated" alt="">
+            </div>-->
+  
+        <!--<div class="col-lg-6  d-flex flex-column justify-content-center" data-aos="fade-in">
+              <h1>Value Changes Everything, <span>Hallway</span></h1>
+              <p>Helping you and small businesses with an innovative platform for your products and services.</p>
+              <div class="d-flex">
+                <a href="" class="btn-get-started">Get Started</a>
+                <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>
+                <a href="https://www.play.google.com" target="_blank"><img class="herodownload" style="margin-left: 30px; width: 170px; height: auto;" src="{% static 'assets/img/Frame 12.png' %}" alt=""></a>
+              </div>
+            </div>-->
+  
+          </div>
+        </div>
+  
+        <svg class="hero-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28 " preserveAspectRatio="none">
+          <defs>
+            <path id="wave-path" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+          </defs>
+          <g class="wave1">
+            <use xlink:href="#wave-path" x="50" y="3"></use>
+          </g>
+          <g class="wave2">
+            <use xlink:href="#wave-path" x="50" y="0"></use>
+          </g>
+          <g class="wave3">
+            <use xlink:href="#wave-path" x="50" y="9"></use>
+          </g>
+        </svg>
+  
+      </section><!-- /Hero Section -->
+
+      <div class="container py-5">
+        <!-- Top Featured Section -->
+        <section class="top-featured">
+          <h2 class="section-title mb-4">Most Recent</h2>
+          <div class="row">
+            <div class="col-lg-8">
+              <div class="featured-post">
+                <img src="{{recent.header_img.url}}" class="img-fluid" alt="Featured Post">
+                <div class="featured-post-content">
+                  <h3><a href="post-detail.html">{{recent.article_title}}</a></h3>
+                  <p class="summary">{{recent.description}}</p>
+                  <a href="post-detail.html" class="btn btn-primary">Read More</a>
+                </div>
+              </div>
+            </div>
+
+  
+            <div class="col-lg-4">
+              <div class="sidebar">
+                <h4>All Content</h4>
+                <ul>
+                  <li><a href="post-detail.html">Trending Headline 1</a></li>
+                  <li><a href="post-detail.html">Trending Headline 2</a></li>
+                  <li><a href="post-detail.html">Trending Headline 3</a></li>
+                  <li><a href="post-detail.html">Trending Headline 4</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+  
+        <!-- Coming Soon Section -->
+        <section class="coming-soon">
+          <h2 class="section-title mb-4">General</h2>
+          <div class="row">
+            {% for k in bogs %}
+            <div class="col-lg-6" style="margin-bottom: 30px;">
+              <div class="coming-soon-post">
+                <img style="border-radius: 10px;" src="{{k.header_img.url}}" class="img-fluid" alt="Coming Soon">
+                <div class="coming-soon-content">
+                  <h3><a href="post-detail.html">{{k.article_title}}</a></h3>
+                  <p>{{k.description}}</p>
+                  <a href="post-detail.html" class="btn btn-warning">Learn More</a>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+            <!--<div class="col-lg-6">
+              <div class="coming-soon-post">
+                <img src="{% static 'assets/img/gallery/gallery-3.jpg' %}" class="img-fluid" alt="App Updates">
+                <div class="coming-soon-content">
+                  <h3><a href="post-detail.html">App Update #3 – Big Changes</a></h3>
+                  <p>Our app is getting a major update with tons of new improvements. Stay tuned!</p>
+                  <a href="post-detail.html" class="btn btn-warning">Learn More</a>
+                </div>
+              </div>
+            </div>-->
+          </div>
+        </section>
+  
+        <!-- Hallway Events Section (Updated Layout) -->
+        <section class="hallway-events">
+            <h2 class="section-title mb-4">Hallway Events</h2>
+            <div class="row">
+                {% for klow in event %}
+                <div class="col-lg-4" style="margin-bottom: 30px;">
+                  <div class="event-card card">
+                    <img src="{{klow.flyer_img.url}}" class="img-fluid card-img-top" alt="Event 1">
+                    <div class="card-body">
+                      <h5><a href="event-detail.html" class="event-title">{{klow.event_title}}</a></h5>
+                      <p class="event-description">{{klow.description}}</p>
+                      <div class="event-meta d-flex align-items-center mb-3">
+                        <i class="bi bi-geo-alt me-2 text-danger"></i><span class="me-3" style="color: grey; font-size: small;">{{klow.location}}</span>
+                        <i class="bi bi-calendar-event me-2 text-primary"></i><span style="color: grey; font-size: small;">{{klow.date}}, {{klow.time}}</span>
+                      </div>
+                      <a href="#" class="btn btn-success add-to-calendar" style="width: 100%;" 
+                         data-title="{{klow.event_title}}" 
+                         data-location="{{klow.location}}" 
+                         data-description="{{klow.description}}" 
+                         data-date="{{klow.date}}" 
+                         data-time="{{klow.time}}">Add to Calendar</a>
+                    </div>
+                  </div>
+                </div>
+              {% endfor %}
+              
+              <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                  document.querySelectorAll('.add-to-calendar').forEach(button => {
+                    button.addEventListener('click', function(e) {
+                      e.preventDefault();
+              
+                      const title = this.getAttribute('data-title');
+                      const location = this.getAttribute('data-location');
+                      const description = this.getAttribute('data-description');
+                      const date = this.getAttribute('data-date');
+                      const time = this.getAttribute('data-time');
+              
+                      console.log(`Adding to calendar: ${title} on ${date} at ${time}`); // Debugging log
+              
+                      // Combine date and time for event start
+                      const startDateTime = new Date(`${date} ${time}`);
+                      if (isNaN(startDateTime)) {
+                        console.error("Invalid date or time format");
+                        return;
+                      }
+              
+                      const formattedStartDate = startDateTime.toISOString().replace(/-|:|\.\d+/g, '');
+                      const endDateTime = new Date(startDateTime.getTime() + 2 * 60 * 60 * 1000);
+                      const formattedEndDate = endDateTime.toISOString().replace(/-|:|\.\d+/g, '');
+              
+                      const icsFile = `BEGIN:VCALENDAR
+              VERSION:2.0
+              PRODID:-//Your Organization//NONSGML v1.0//EN
+              BEGIN:VEVENT
+              SUMMARY:${title}
+              DESCRIPTION:${description}
+              LOCATION:${location}
+              DTSTART:${formattedStartDate}
+              DTEND:${formattedEndDate}
+              STATUS:CONFIRMED
+              BEGIN:VALARM
+              TRIGGER:-PT15M
+              DESCRIPTION:Reminder for ${title}
+              ACTION:DISPLAY
+              END:VALARM
+              END:VEVENT
+              END:VCALENDAR`;
+              
+                      const blob = new Blob([icsFile], { type: 'text/calendar' });
+                      const link = document.createElement('a');
+                      link.href = URL.createObjectURL(blob);
+                      link.download = `${title}.ics`;
+                      link.click();
+                    });
+                  });
+                });
+              </script>
+              
+            </div>
+          </section>
+          
+  
+        <!-- Trending Vendors Section (Grid Layout) -->
+        <section class="trending-vendors">
+          <h2 class="section-title mb-4">Trending Vendors</h2>
+          <div class="vendor-grid row">
+            <div class="col-lg-4 col-md-6">
+              <div class="vendor-card">
+                <img src="{% static 'assets/img/gallery/gallery-7.jpg' %}" class="img-fluid" alt="Vendor 1">
+                <h5><a href="vendor-detail.html">Vendor of the Month: Tech Innovations</a></h5>
+                <p>Tech Innovations has been delivering incredible value to our customers this month. Find out more about their offerings!</p>
+                <a href="vendor-detail.html" class="btn btn-primary">Read More</a>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="vendor-card">
+                <img src="{% static 'assets/img/gallery/gallery-8.jpg' %}" class="img-fluid" alt="Vendor 2">
+                <h5><a href="vendor-detail.html">Top Vendor: Green Solutions</a></h5>
+                <p>Green Solutions is making a difference by providing eco-friendly products. Learn more about their impact.</p>
+                <a href="vendor-detail.html" class="btn btn-primary">Read More</a>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="vendor-card">
+                <img src="{% static 'assets/img/gallery/gallery-1.jpg' %}" class="img-fluid" alt="Vendor 3">
+                <h5><a href="vendor-detail.html">Vendor of the Year: Supply Co.</a></h5>
+                <p>Supply Co. has been a top performer in delivering premium supplies to businesses across the globe.</p>
+                <a href="vendor-detail.html" class="btn btn-primary">Read More</a>
+              </div>
+            </div>
+          </div>
+        </section>
+  
+        <!-- Top Performing Professionals Section (Masonry Layout) -->
+        <section class="top-performing-professionals">
+          <h2 class="section-title mb-4">Top Performing Professionals</h2>
+          <div class="row professional-masonry">
+            <div class="col-lg-4 col-md-6">
+              <div class="professional-card card">
+                <img src="{% static 'assets/img/team/team-1.jpg' %}" class="img-fluid card-img-top" alt="Professional 1">
+                <div class="card-body">
+                  <h5><a href="professional-detail.html">Rising Star: Jane Doe</a></h5>
+                  <p>Jane is a highly skilled professional who has made significant contributions to the platform.</p>
+                  <a href="professional-detail.html" class="btn btn-warning">Read More</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="professional-card card">
+                <img src="{% static 'assets/img/team/team-2.jpg' %}" class="img-fluid card-img-top" alt="Professional 2">
+                <div class="card-body">
+                  <h5><a href="professional-detail.html">Professional of the Month: John Smith</a></h5>
+                  <p>John has demonstrated exceptional skills and a passion for providing excellent service.</p>
+                  <a href="professional-detail.html" class="btn btn-warning">Read More</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="professional-card card">
+                <img src="{% static 'assets/img/team/team-3.jpg' %}" class="img-fluid card-img-top" alt="Professional 3">
+                <div class="card-body">
+                  <h5><a href="professional-detail.html">Rising Star: Alex Johnson</a></h5>
+                  <p>Alex Johnson is one of the up-and-coming professionals who have been excelling in their field. Check out their work!</p>
+                  <a href="professional-detail.html" class="btn btn-warning">Read More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+  
+      </div>
+  
+  </main>
+
+  <footer id="footer" class="footer dark-background">
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <!-- Footer Content (as before) -->
+        <div class="col-lg-4 col-md-6 footer-about">
+            <a href="" class="logo d-flex align-items-center">
+              <!--<span class="sitename">Bootslander</span>-->
+              <img src="{% static 'assets/img/Frame 1.png' %}" alt="">
+            </a>
+            <div class="footer-contact pt-3">
+              <p>Kwame Nkrumah University of Science & Tech.</p>
+              <p>Kumai, Ashanti Region - Ghana</p>
+              <p class="mt-3"><strong>Phone:</strong> <span>+233 54 939 5717</span></p>
+              <p><strong>Email:</strong> <span>info@hallway-gh.tech</span></p>
+            </div>
+            <div class="social-links d-flex mt-4">
+              <a href=""><i class="bi bi-twitter-x"></i></a>
+              <a href=""><i class="bi bi-facebook"></i></a>
+              <a href=""><i class="bi bi-instagram"></i></a>
+              <a href=""><i class="bi bi-linkedin"></i></a>
+            </div>
+          </div>
+  
+          <div class="col-lg-2 col-md-3 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About us</a></li>
+              <li><a href="#">Blog</a></li>
+            </ul>
+          </div>
+  
+          <div class="col-lg-2 col-md-3 footer-links">
+            <h4>Support</h4>
+            <ul>
+              <li><a href="#">Terms of service</a></li>
+              <li><a href="#">Privacy policy</a></li>
+              <li><a href="#">Refund Policy</a></li>
+              <li><a href="#">Help Center</a></li>
+            </ul>
+          </div>
+  
+          <div class="col-lg-4 col-md-12 footer-newsletter">
+            <h4>Our Newsletter</h4>
+            <p>Subscribe to our newsletter and receive the latest news about our products and services!</p>
+            <form action="{% static 'forms/newsletter.php' %}" method="post" class="php-email-form">
+              <div class="newsletter-form"><input type="email" name="email"><input type="submit" value="Subscribe"></div>
+              <div class="loading">Loading</div>
+              <div class="error-message"></div>
+              <div class="sent-message">Your subscription request has been sent. Thank you!</div>
+            </form>
+          </div>
+  
+      </div>
+
+    </div>
+    <div class="container copyright text-center mt-4">
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">Hallway LLC</strong> <span>All Rights Reserved</span></p>
+        <div class="credits">
+          Powered by <a href="https://www.siisi.tech">Siisi Technologies</a>
+        </div>
+      </div>
+  </footer>
+
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'assets/js/main.js' %}"></script>
+</body>
+
+</html>
